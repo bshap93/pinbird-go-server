@@ -1,7 +1,6 @@
-package pins
+package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -56,7 +55,3 @@ func getFullAppendage(params map[string]string, apiTok string) string {
 // func getAllPins() {
 // 	response, err := http.Get()
 // }
-
-func main() {
-	fmt.Println("Enter your Pinboard API Token: ")
-}

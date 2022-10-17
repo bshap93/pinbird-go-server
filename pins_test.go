@@ -1,4 +1,4 @@
-package pins
+package main
 
 import (
 	"regexp"
@@ -20,6 +20,24 @@ func TestEmptyGetAuthAppendage(t *testing.T) {
 	if want.MatchString(authAppendage) {
 		t.Fatalf(`getAuthAppendage(token) = %q, want match for %#q, nil`, authAppendage, want)
 	}
+}
+
+func TestGetFullAppendage(t *testing.T) {
+	params := make(map[string]string)
+	params["url"] = "https://pub.dev"
+	params["tags"] = "flutter development"
+	params["description"] = "A repository of Dart packages"
+	params["extended"] = ""
+	params["shared"] = "yes"
+	params["toread"] = "no"
+	token := "bshap93:1A2DC6C239D948A40F2C"
+	fullAppendage := getFullAppendage(params, token)
+	//TODO
+	want := regexp.MustCompile(`regex`)
+	if !want.MatchString(fullAppendage) {
+		t.Fatalf(`getAuthAppendage(token) = %q, want match for %#q, nil`, fullAppendage, want)
+	}
+
 }
 
 // // TestHelloEmpty calls greetings.Hello with an empty string,
